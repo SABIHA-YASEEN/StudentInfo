@@ -1,0 +1,59 @@
+﻿@model StudentInfo.Models.Student
+
+@{
+    ViewData["Title"] = "Create New Student";
+}
+
+<h1 class="text-dark">Create New Student</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" class="needs-validation" novalidate>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label text-dark">Full Name</label>
+                <input asp-for="Name" class="form-control bg-dark text-light" style="border-color: #6c757d;" required />
+                <div class="invalid-feedback text-light" style="color: #dc3545;">
+                    Please provide a valid name.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Age" class="form-label text-dark">Age</label>
+                <input asp-for="Age" class="form-control bg-dark text-light" style="border-color: #6c757d;" required />
+                <div class="invalid-feedback text-light" style="color: #dc3545;">
+                    Please provide a valid age.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Semester" class="form-label text-dark">Semester</label>
+                <input asp-for="Semester" class="form-control bg-dark text-light" style="border-color: #6c757d;" required />
+                <div class="invalid-feedback text-light" style="color: #dc3545;">
+                    Please provide a valid semester.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Batch" class="form-label text-dark">Batch</label>
+                <input asp-for="Batch" class="form-control bg-dark text-light" style="border-color: #6c757d;" required />
+                <div class="invalid-feedback text-light" style="color: #dc3545;">
+                    Please provide a valid batch.
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Index" class="btn btn-secondary">Back to Student List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
